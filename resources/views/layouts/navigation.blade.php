@@ -1,100 +1,202 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+<div class="page-sidebar" data-pages="sidebar">
+    <div id="appMenu" class="sidebar-overlay-slide from-top"></div>
+    <!-- BEGIN SIDEBAR HEADER -->
+    <div class="sidebar-header">
+        <img src="images/logo.png" alt="logo" class="brand" data-src="images/logo.png"
+            data-src-retina="images/logo.png" height="22">
+        <div class="sidebar-header-controls">
+            <button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20"
+                data-pages-toggle="#appMenu">
+                <i class="fa fa-angle-down fs-16"></i>
+            </button>
+            <button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar">
+                <i class="fa fs-12"></i>
+            </button>
+        </div>
+    </div>
+    <!-- END SIDEBAR HEADER -->
+    <!-- BEGIN SIDEBAR MENU -->
+    <div class="sidebar-menu">
+        <div class="scroll-wrapper menu-items" style="position: relative;">
+            <ul class="menu-items scroll-content"
+                style="height: 562px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Manajemen Audit</span>
+                        <span class="arrow"></span>
                     </a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    <span class="icon-thumbnail">
+                        <i>MA</i>
+                    </span>
+                    <ul class="sub-menu" style="display: none;">
+                        <li class="">
+                            <a href=" main_page.php?method=auditplan ">Perencanaan Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=auditassign ">Pelaksanaan Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=reportaudit ">Pelaporan Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=followupassign ">Tindak Lanjut Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=tanggapanaudit ">Tanggapan Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Dashboard RMS</span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>DSH</i>
+                    </span>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Manajemen Pegawai</span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>MP</i>
+                    </span>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Manajemen Auditee</span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>MS</i>
+                    </span>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Pustaka Audit</span>
+                        <span class="arrow   "></span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>PA</i>
+                    </span>
+                    <ul class="sub-menu" style="display:none">
+                        <li class="">
+                            <a href=" main_page.php?method=ref_program ">Pustaka Program Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=ref_audit ">Pustaka Referensi Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Parameter Aplikasi</span>
+                        <span class="arrow   "></span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>PAR</i>
+                    </span>
+                    <ul class="sub-menu" style="display:none">
+                        <li class="">
+                            <a href=" main_page.php?method=par_audit_main ">Parameter Audit</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=par_auditor_main ">Parameter Pegawai</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=par_auditee_main ">Parameter Auditee</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" " onclick="handleClick(event)">
+                    <a href="#">
+                        <span class="title">Manajemen Pengguna</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">
+                        <i>USR</i>
+                    </span>
+                    <ul class="sub-menu" style="display: none;">
+                        <li class="active">
+                            <a href=" main_page.php?method=par_group ">Group</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=usermgmt ">Daftar Pengguna</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=backuprestore ">Back Up Restore Data</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                        <li class="">
+                            <a href=" main_page.php?method=log_aktifitas ">Log Aktifitas</a>
+                            <span class="icon-thumbnail">sp</span>
+                        </li>
+                    </ul>
+                </li>
+                <div class="clearfix"></div>
+            </ul>
+            <div class="scroll-element scroll-x">
+                <div class="scroll-element_outer">
+                    <div class="scroll-element_size"></div>
+                    <div class="scroll-element_track"></div>
+                    <div class="scroll-bar" style="width: 96px;"></div>
                 </div>
             </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+            <div class="scroll-element scroll-y">
+                <div class="scroll-element_outer">
+                    <div class="scroll-element_size"></div>
+                    <div class="scroll-element_track"></div>
+                    <div class="scroll-bar" style="height: 96px;"></div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
+<script>
+    function clearActiveItem() {
+        document.querySelectorAll('.active, .open').forEach(element => {
+            element.classList.remove('active');
+            element.classList.remove('open');
+        });
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
+        document.querySelectorAll('.sub-menu').forEach(subMenu => {
+            subMenu.style.display = 'none';
+        });
+    }
+    
+    function handleClick(event) {        
+        const target = event.target
+        const item = target.closest('li')
+        const arrow = item.querySelector('.arrow');
+        const list = item.querySelector('.sub-menu');
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
+        // need to clear all .active and .open item & arrow, need to hide showed list
+        console.log(item.classList.contains('active'))
+        if (!item.classList.contains('active')) {
+            clearActiveItem()
+        }
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+        item.classList.toggle('active')
+        item.classList.toggle('open')
+        arrow.classList.toggle('active')
+        arrow.classList.toggle('open')
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-    </div>
-</nav>
+        if (list.style.display != 'block') {
+            list.style.display = 'block'
+        } else {
+            list.style.display = 'none'
+        }
+    }
+</script>

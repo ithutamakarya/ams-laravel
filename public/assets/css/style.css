@@ -1,0 +1,60 @@
+.table_role {
+	border: 1px solid #dddddd;
+	background: #eeeeee
+		url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top
+		repeat-x;
+	color: #333333;
+}
+.table_risk, .table_report {
+	width: 100%;
+	font-size: 8pt;
+}
+
+.table_report th {
+	border: 1px #ccc solid;
+	height: 34px;
+	background: #F5F3BA;
+}
+
+.table_report td {
+	vertical-align: top;
+	padding: 4px;
+}
+
+.table_risk th {
+	border: 1px #ccc solid;
+	height: 34px;
+	background: #F5F3BA;
+}
+
+.table_risk td {
+	border: 1px #ccc solid;
+	vertical-align: top;
+	padding: 4px;
+}
+
+.cmb_risk, .txt_risk {
+	font-size: 8pt;
+}
+
+.lha {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 1cm;
+    margin: 1cm auto;
+    border: 1px #eee solid;
+    background: white;
+    font-size:14px;
+    line-height:24px;
+    color:#555;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.lha ol{	
+	margin-left: -25px;
+	margin-top: 0;
+}
+
+.lha li{	
+	text-align: justify;
+}
