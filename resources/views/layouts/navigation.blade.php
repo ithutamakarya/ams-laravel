@@ -2,8 +2,8 @@
     <div id="appMenu" class="sidebar-overlay-slide from-top"></div>
     <!-- BEGIN SIDEBAR HEADER -->
     <div class="sidebar-header">
-        <img src="images/logo.png" alt="logo" class="brand" data-src="images/logo.png"
-            data-src-retina="images/logo.png" height="22">
+        <img src="/images/logo.png" alt="logo" class="brand" data-src="/images/logo.png"
+            data-src-retina="/images/logo.png" height="22">
         <div class="sidebar-header-controls">
             <button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20"
                 data-pages-toggle="#appMenu">
@@ -104,15 +104,15 @@
                     </span>
                     <ul class="sub-menu" style="display:none">
                         <li class="">
-                            <a href=" main_page.php?method=par_audit_main ">Parameter Audit</a>
+                            <a href="#">Parameter Audit</a>
                             <span class="icon-thumbnail">sp</span>
                         </li>
                         <li class="">
-                            <a href=" main_page.php?method=par_auditor_main ">Parameter Pegawai</a>
+                            <a href="{{ route('position.main')}}">Parameter Pegawai</a>
                             <span class="icon-thumbnail">sp</span>
                         </li>
                         <li class="">
-                            <a href=" main_page.php?method=par_auditee_main ">Parameter Auditee</a>
+                            <a href="#">Parameter Auditee</a>
                             <span class="icon-thumbnail">sp</span>
                         </li>
                     </ul>
